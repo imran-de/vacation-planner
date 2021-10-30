@@ -6,11 +6,11 @@ import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logOut } = useAuth();
     return (
-        <header>
+        <header className="sticky-top">
 
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">Vacation Care</Navbar.Brand>
+                    <Navbar.Brand as={Link} className="fw-bold" to="/">Vacation Care</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">

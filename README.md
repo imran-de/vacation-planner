@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project Live on [Vacation planner](https://vacation-planner-916b4.web.app/).
 
 ## Available Scripts
 

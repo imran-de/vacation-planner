@@ -7,7 +7,7 @@ const Footer = () => {
             {/* <!-- component --> */}
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css" />
 
-            <footer className="bg-dark text-light p-lg-5">
+            <footer className="text-dark p-lg-5" style={{ backgroundColor: '#F3F6F5' }}>
                 <div className="container row">
                     {/* <!-- Col-1 --> */}
                     <div className="col-md-3">
@@ -59,11 +59,11 @@ const Footer = () => {
 
                         <div className="">
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item bg-dark text-light border-bottom border-light">News Title</li>
-                                <li className="list-group-item bg-dark text-light border-bottom border-light">News Title</li>
-                                <li className="list-group-item bg-dark text-light border-bottom border-light">News Title</li>
-                                <li className="list-group-item bg-dark text-light border-bottom border-light">News Title</li>
-                                <li className="list-group-item bg-dark text-light border-bottom border-light">News Title</li>
+                                <li className="list-group-item border-bottom border-light">News Title</li>
+                                <li className="list-group-item border-bottom border-light">News Title</li>
+                                <li className="list-group-item border-bottom border-light">News Title</li>
+                                <li className="list-group-item border-bottom border-light">News Title</li>
+                                <li className="list-group-item border-bottom border-light">News Title</li>
                             </ul>
                         </div>
 

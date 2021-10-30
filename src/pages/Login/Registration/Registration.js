@@ -27,7 +27,7 @@ const Registration = () => {
                         {/* <!-- Col --> */}
                         <div
                             className="col-lg-4"
-                            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1587&q=80')", backgroundSize: 'cover' }}
+                            style={{ backgroundImage: "url('https://assets.theyachtweek.com/wp-content/uploads/2020/08/0pt.png')", backgroundSize: 'cover' }}
                         ></div>
                         {/* <!-- Col --> */}
                         <div className="col-lg-8 pt-4">

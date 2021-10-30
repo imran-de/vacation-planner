@@ -1,0 +1,10 @@
+.banner-container{
+    background-image: url('https://assets.theyachtweek.com/wp-content/uploads/2021/09/TYW_Croatia_w31_Angelo_Virag_236-1-1.jpg');
+    height: 94vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-container-overlay{
+    background-color: rgba(0, 0, 0, .4);
+    height: 94vh;
+}

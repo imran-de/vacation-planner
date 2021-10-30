@@ -22,7 +22,7 @@ const Login = () => {
             {/* Login with email and password */}
 
             <div className="py-5 d-flex justify-content-center align-items-center text-center">
-                <div className="p-4 rounded-3 col-lg-4" style={{ backgroundColor: '#fafafa' }}>
+                <div className="p-4 rounded-3 col-lg-4" style={{ backgroundColor: '#F3F6F5' }}>
                     <h1 className="text-center text-secondary fw-bold px-4">
                         LOGIN
                     </h1>
