@@ -9,7 +9,7 @@ const Destination = () => {
     //catch id from url
     const { id } = useParams();
     // react hook form
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     //collect user information
     const { user } = useAuth();
     //loader status
@@ -42,8 +42,9 @@ const Destination = () => {
     }
     // for order confirmed
     const onSubmit = data => {
-        data.confirmEventNo = destination._id;
-        console.log(data)
+        data.confirmEventNo = destination?._id;
+        data.eventName = destination?.eventName;
+        data.status = "pending";
         fetch('http://localhost:5000/addOrders', {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -51,7 +52,10 @@ const Destination = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                if (result.insertedId) {
+                    alert('Order Confirmed, you can see all in My orders page.')
+                    reset();
+                }
             })
     };
 
