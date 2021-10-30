@@ -41,7 +41,10 @@ const Destination = () => {
         </div>
     }
     // for order confirmed
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        data.confirmEvent = destination._id;
+        console.log(data)
+    };
 
 
 
@@ -96,7 +99,7 @@ const Destination = () => {
                             <input type="number" className="form-control"  {...register("chilled")} placeholder="chilled" required />
                         </div>
                         <div className="col-md-4">
-                            <input type="text" className="form-control" defaultValue={destination._id}  {...register("confirmEvent")} placeholder="Event" required readOnly />
+                            <input type="text" className="form-control" defaultValue={destination?._id}  {...register("confirmEvent")} placeholder="Event" required readOnly />
                         </div>
                         <div className="col-10">
                             <textarea type="text" className="form-control"  {...register("message")} placeholder="Message" required />
