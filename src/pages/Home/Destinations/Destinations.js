@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col, Placeholder, Button } from 'react-bootstrap';
+import { Card, Row, Col, Placeholder } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Destinations = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -29,11 +30,6 @@ const Destinations = () => {
             </Card.Body>
         </Card>
     }
-    // btn click
-    const handleBook = (id) => {
-        console.log(id);
-    }
-
 
     return (
         <div style={{ backgroundColor: "#F3F6F5" }}>
@@ -59,7 +55,9 @@ const Destinations = () => {
                                             </Col>
                                         </Row>
                                     </Card.Text>
-                                    <Row><Button onClick={() => handleBook(destination.id)} variant="primary">Book Now</Button></Row>
+                                    <Row>
+                                        <Link className="btn btn-outline-light" to={`/destination/${destination?._id}/${destination?.name}`}>Book Now</Link>
+                                    </Row>
                                 </div>
                             </Card.Body>
                         </Card>
@@ -69,7 +67,7 @@ const Destinations = () => {
 
                 {/* see all btn */}
                 <div className="text-center mt-5">
-                    <a className="btn btn-outline-info" href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fab fa-buromobelexperte"></i> See all destinations</a>
+                    <Link className="btn btn-outline-info" to="/destinations" rel="noreferrer"><i className="fab fa-buromobelexperte"></i> See all destinations</Link>
                 </div>
             </div>
         </div>

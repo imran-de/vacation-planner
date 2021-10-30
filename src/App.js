@@ -9,8 +9,13 @@ import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import Home from './pages/Home/Home/Home';
 import Profile from './pages/Admin/Profile/Profile';
+import MyOrders from './pages/Admin/MyOrders/MyOrders';
+import ManageAllOrders from './pages/Admin/ManageAllOrders/ManageAllOrders';
+import AddNewDestination from './pages/Admin/AddNewDestination/AddNewDestination';
 import Header from './pages/shared/Header/Header';
 import Footer from './pages/shared/Footer/Footer';
+import Destinations from './pages/Home/Destinations/Destinations';
+import Destination from './pages/Destination/Destination';
 
 function App() {
   return (
@@ -25,6 +30,12 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <Route path="/destinations">
+              <Destinations />
+            </Route>
+            <PrivateRoute path="/destination/:id/:destinationName">
+              <Destination />
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
@@ -33,6 +44,15 @@ function App() {
             </Route>
             <PrivateRoute exact path="/user/:profile">
               <Profile></Profile>
+            </PrivateRoute>
+            <PrivateRoute path="/myOrders">
+              <MyOrders />
+            </PrivateRoute>
+            <PrivateRoute path="/manageAllOrders">
+              <ManageAllOrders />
+            </PrivateRoute>
+            <PrivateRoute path="/addNewDestinations">
+              <AddNewDestination />
             </PrivateRoute>
 
             <Route path="/about">
