@@ -42,8 +42,17 @@ const Destination = () => {
     }
     // for order confirmed
     const onSubmit = data => {
-        data.confirmEvent = destination._id;
+        data.confirmEventNo = destination._id;
         console.log(data)
+        fetch('http://localhost:5000/addOrders', {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
     };
 
 
@@ -90,7 +99,7 @@ const Destination = () => {
                         <div className=" col-md-4">
                             <div className="input-group">
                                 <span className="input-group-text" id="inputGroupPrepend2">@</span>
-                                <input type="email" className="form-control" defaultValue={user?.email}  {...register("email")} placeholder="xyz@gmail.com" required />
+                                <input type="email" className="form-control" value={user?.email}  {...register("email")} placeholder="xyz@gmail.com" required readOnly />
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -100,10 +109,10 @@ const Destination = () => {
                             <input type="number" className="form-control"  {...register("chilled")} placeholder="chilled" required />
                         </div>
                         <div className="col-md-4">
-                            <input type="text" className="form-control" defaultValue={destination?._id}  {...register("confirmEvent")} placeholder="Event" required readOnly />
+                            <input type="text" className="form-control" defaultValue={destination?._id}  {...register("confirmEventNo")} placeholder="Event" required readOnly />
                         </div>
                         <div className="col-10">
-                            <textarea type="text" className="form-control"  {...register("message")} placeholder="Message" required />
+                            <textarea type="text" className="form-control"  {...register("message")} placeholder="Message (optional)" />
                         </div>
                         <div className="col-12">
                             <button className="btn btn-warning fw-bold" type="submit">Confirmed Now</button>

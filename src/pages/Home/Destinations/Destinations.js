@@ -56,7 +56,7 @@ const Destinations = () => {
                                         </Row>
                                     </Card.Text>
                                     <Row>
-                                        <Link className="btn btn-primary" to={`/destination/${destination?._id}/${destination?.name}`}>Book Now</Link>
+                                        <Link className="btn btn-primary" to={`/destination/${destination?._id}/${destination?.eventName}`}>Book Now</Link>
                                     </Row>
                                 </div>
                             </Card.Body>
