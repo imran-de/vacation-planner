@@ -1,0 +1,16 @@
+.subscribe-container{
+    background-image: url('https://assets.theyachtweek.com/wp-content/uploads/2020/02/newsletter.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    min-height: 280px;
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 25px;
+    padding: 40px 20px;
+}
