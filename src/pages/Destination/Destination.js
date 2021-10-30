@@ -61,6 +61,7 @@ const Destination = () => {
                         <img className="img-fluid" src={destination?.imgURL} alt="" />
                     </div>
                     <div className="col-md-6">
+                        <h3><button className="btn btn-danger">{destination?.status} For Booking</button></h3>
                         <h5>Location: {destination?.location}</h5>
                         <h2>{destination?.eventName}</h2>
                         <p><b>Date: </b>{destination?.date}</p>
