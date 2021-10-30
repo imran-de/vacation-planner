@@ -7,7 +7,7 @@ const Destinations = () => {
     const [destinations, setDestinations] = useState([])
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://nameless-spire-55077.herokuapp.com/services')
+        fetch('http://localhost:5000/allEvents')
             .then(res => res.json())
             .then(data => {
                 setDestinations(data);
@@ -38,25 +38,25 @@ const Destinations = () => {
                 <Row xs={1} md={3} lg={4} className="g-4">
                     {destinations.map(destination => <Col key={Math.random()}>
                         <Card className="border-0 shadow rounded-3" style={{ backgroundColor: "#F3F6F5" }}>
-                            <Card.Img className="rounded-bottom" variant="top" height="480" src={destination?.img} style={{ objectFit: 'cover' }} />
-                            <Card.Body className="card-img-overlay text-light w-100" style={{ backgroundColor: "rgba(0,0,0,.5)" }}>
+                            <Card.Img className="rounded-bottom" variant="top" height="480" src={destination?.imgURL} style={{ objectFit: 'cover' }} />
+                            <Card.Body className="card-img-overlay text-light w-100">
                                 <div className="w-100 pe-5" style={{ position: 'absolute', bottom: '10px' }}>
-                                    <h5>Place</h5>
-                                    <Card.Title>{destination?.name}</Card.Title>
+                                    <h5>Place: {destination?.location}</h5>
+                                    <Card.Title>{destination?.eventName}</Card.Title>
                                     <Card.Text>
                                         <Row>
                                             <Col className="col-sm-6 border-end">
                                                 <span>Dates</span><br />
-                                                <span>May-Aug</span>
+                                                <span>{destination?.date}</span>
                                             </Col>
                                             <Col className="col-sm-6">
                                                 <span>Price</span><br />
-                                                <span>From $270</span>
+                                                <span>From ${destination?.price}pp</span>
                                             </Col>
                                         </Row>
                                     </Card.Text>
                                     <Row>
-                                        <Link className="btn btn-outline-light" to={`/destination/${destination?._id}/${destination?.name}`}>Book Now</Link>
+                                        <Link className="btn btn-primary" to={`/destination/${destination?._id}/${destination?.name}`}>Book Now</Link>
                                     </Row>
                                 </div>
                             </Card.Body>

@@ -18,7 +18,7 @@ const Destination = () => {
     const [destination, setDestination] = useState([]);
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://nameless-spire-55077.herokuapp.com/services')
+        fetch('http://localhost:5000/allEvents')
             .then(res => res.json())
             .then(data => {
                 setDestinations(data);
@@ -49,22 +49,22 @@ const Destination = () => {
 
 
     return (
-        <div className="container">
-            <h2 className="fs-2 text-center">{destination?.name}</h2>
+        <div className="container mb-5">
+            <h2 className="fs-2 text-center">{destination?.eventName}</h2>
 
             <div className="my-5">
                 <div className="row">
-                    <div className="col-12 text-center">
-                        <img className="img-fluid" src={destination?.img} alt="" />
-                    </div>
-                    <div className="col-12 text-end">
+                    <div className="col-12 text-end pb-2">
                         <button className="btn btn-warning">Book Now</button>
+                    </div>
+                    <div className="col-12 text-center mb-3">
+                        <img className="img-fluid" src={destination?.imgURL} alt="" />
                     </div>
                     <div className="col-md-6">
                         <h5>Location: {destination?.location}</h5>
-                        <h2>{destination?.name}</h2>
+                        <h2>{destination?.eventName}</h2>
                         <p><b>Date: </b>{destination?.date}</p>
-                        <p><b>Price: </b> {destination?.price}</p>
+                        <p><b>Price: </b> From ${destination?.price} per person.</p>
                         <button className="btn btn-warning">Confirmed Now</button>
                     </div>
                     <div className="col-md-6">
@@ -110,6 +110,10 @@ const Destination = () => {
                     </form>
                 </div>
             </div>
+            {destination?.mapURL && <>
+                <h3 className="text-center my-3 mb-5">Example itinerary for your week</h3>
+                <iframe title={destination?._id} src={destination.mapURL} width="100%" height="450" style={{ border: "0" }} allowFullScreen="" loading="lazy"></iframe>
+            </>}
         </div>
     );
 };
