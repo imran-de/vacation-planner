@@ -80,7 +80,13 @@ const ManageAllOrders = () => {
                                 <td>{order.email}</td>
                                 <td>{order.person}</td>
                                 <td>{order.chilled}</td>
-                                <td><button onClick={() => handleStatus(order._id, order.status)} className={order.status === "pending" ? "btn btn-warning" : "btn btn-success"}>{order.status}</button></td>
+                                <td>
+                                    {
+                                        order.status !== "Rejected" && <><button onClick={() => handleStatus(order._id, order.status === "approved" ? "pending" : "approved")} className={order.status === "pending" ? "btn btn-warning" : "btn btn-success"}>{order.status}</button> || </>
+                                    }
+                                    <button onClick={() => handleStatus(order._id, 'Rejected')} className="btn btn-danger">{order.status === "Rejected" ? order.status : "Reject"}</button>
+
+                                </td>
                                 <td><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Remove</button></td>
                             </tr>)
                         }
