@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
     const [statusUpdate, setStatusUpdate] = useState(false);
     //collect all data from mongodb
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://mysterious-island-52828.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [statusUpdate])
@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
         const response = window.confirm("are your sure to change status?")
         if (response) {
             setStatusUpdate(false);
-            fetch(`http://localhost:5000/updateStatus/${orderId}/${currentStatus}`, {
+            fetch(`https://mysterious-island-52828.herokuapp.com/updateStatus/${orderId}/${currentStatus}`, {
                 method: 'PUT',
                 headers: { "content-type": "application/json" },
                 body: "",
@@ -35,7 +35,7 @@ const ManageAllOrders = () => {
     const handleDelete = (orderId) => {
         const response = window.confirm(`Are you sure to delete? Remember it you can't rollback it`)
         if (response) {
-            fetch(`http://localhost:5000/orderDelete/${orderId}`, {
+            fetch(`https://mysterious-island-52828.herokuapp.com/orderDelete/${orderId}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
                 body: "",

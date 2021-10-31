@@ -10,7 +10,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user.email}`)
+        fetch(`https://mysterious-island-52828.herokuapp.com/myOrders/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
@@ -21,7 +21,7 @@ const MyOrders = () => {
     const handleDelete = orderId => {
         const response = window.confirm(`Are you sure to delete? Remember it you can't rollback it`)
         if (response) {
-            fetch(`http://localhost:5000/orderDelete/${orderId}`, {
+            fetch(`https://mysterious-island-52828.herokuapp.com/orderDelete/${orderId}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
                 body: "",

@@ -7,7 +7,7 @@ const AddNewDestination = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.status = "Open";
-        fetch("http://localhost:5000/addEvent", {
+        fetch("https://mysterious-island-52828.herokuapp.com/addEvent", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

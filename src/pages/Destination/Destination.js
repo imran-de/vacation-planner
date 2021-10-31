@@ -18,7 +18,7 @@ const Destination = () => {
     const [destination, setDestination] = useState([]);
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/allEvents')
+        fetch('https://mysterious-island-52828.herokuapp.com/allEvents')
             .then(res => res.json())
             .then(data => {
                 setDestinations(data);
@@ -45,7 +45,7 @@ const Destination = () => {
         data.confirmEventNo = destination?._id;
         data.eventName = destination?.eventName;
         data.status = "pending";
-        fetch('http://localhost:5000/addOrders', {
+        fetch('https://mysterious-island-52828.herokuapp.com/addOrders', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

@@ -7,7 +7,7 @@ const Destinations = () => {
     const [destinations, setDestinations] = useState([])
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/allEvents')
+        fetch('https://mysterious-island-52828.herokuapp.com/allEvents')
             .then(res => res.json())
             .then(data => {
                 setDestinations(data);
