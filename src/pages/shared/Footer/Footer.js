@@ -37,7 +37,7 @@ const Footer = () => {
                                     <Link className="nav-link active" to="/">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/services">Services</Link>
+                                    <Link className="nav-link" to="/destinations">Events</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/about">About</Link>
@@ -54,16 +54,16 @@ const Footer = () => {
                     <div className="col-md-3">
                         {/* <!-- Col Title --> */}
                         <h2 className="text-center text-lg-start mt-5 mt-lg-0">
-                            News
+                            Upcoming Event
                         </h2>
 
                         <div className="">
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item border-bottom border-light">News Title</li>
-                                <li className="list-group-item border-bottom border-light">News Title</li>
-                                <li className="list-group-item border-bottom border-light">News Title</li>
-                                <li className="list-group-item border-bottom border-light">News Title</li>
-                                <li className="list-group-item border-bottom border-light">News Title</li>
+                                <li className="list-group-item border-bottom border-light"><a href="#eventLink">Event no 1</a></li>
+                                <li className="list-group-item border-bottom border-light"><a href="#eventLink">Event no 2</a></li>
+                                <li className="list-group-item border-bottom border-light"><a href="#eventLink">Event no 3</a></li>
+                                <li className="list-group-item border-bottom border-light"><a href="#eventLink">Event no 4</a></li>
+                                <li className="list-group-item border-bottom border-light"><a href="#eventLink">Event no 5</a></li>
                             </ul>
                         </div>
 
@@ -87,7 +87,7 @@ const Footer = () => {
                 <div className="pt-2">
                     <div className="text-center text-lg-left">
                         <div className="mt-2">
-                            ©Vacation Care Copyright 1996-2021. All Rights Reserved. Developed by <span className="text-info">S Imran Ahmed ST</span>
+                            ©Vacation Planner Copyright 1996-2021. All Rights Reserved. Developed by <span className="text-info">S Imran Ahmed ST</span>
                         </div>
 
                         {/* <!-- Required Un icons (if you want) --> */}

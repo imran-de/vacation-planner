@@ -10,7 +10,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const location = useLocation();
     //catch private route redirect page url
-    const redirect_uri = location.state?.from || '/';
+    const redirect_uri = location.state?.from || '/destinations';
     // handle email password login
     const onSubmit = data => {
         logInWithEmailAndPassword(data.email, data.pass, history, redirect_uri);

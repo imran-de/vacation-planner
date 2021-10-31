@@ -4,13 +4,13 @@ import { Form, Button } from 'react-bootstrap';
 const Contact = () => {
     return (
         <div>
-            <div className='d-flex justify-content-center align-items-center' style={{ backgroundImage: "url('https://www.dfeh.ca.gov/wp-content/uploads/sites/32/2019/12/ContactUsBanner.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "300px" }}>
+            <div className='d-flex justify-content-center align-items-center' style={{ backgroundColor: '#F3F6F5', height: "300px" }}>
                 <h2 className="fw-bold">Contact Us</h2>
             </div>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-8">
-                        <p className="py-4"> <span className="text-info">Vacation Care</span> is always looking to make things easier for you. Our aim is to provide our customers with the best medical facilities, constant care, and reliable support. If you would like to get in touch with a doctor from a specific department, would like some specific information about the services we provide, or just have a question for us, please fill up the Form given below and we will get back to you.</p>
+                        <p className="py-4"> <span className="text-info">Vacation Planner</span> is always looking to make things easier for you. Our aim is to provide our customers with the best medical facilities, constant care, and reliable support. If you would like to get in touch with a doctor from a specific department, would like some specific information about the services we provide, or just have a question for us, please fill up the Form given below and we will get back to you.</p>
                     </div>
                 </div>
                 {/* form */}

@@ -16,6 +16,7 @@ import Header from './pages/shared/Header/Header';
 import Footer from './pages/shared/Footer/Footer';
 import Destinations from './pages/Home/Destinations/Destinations';
 import Destination from './pages/Destination/Destination';
+import Booked from './pages/Admin/Booked/Booked';
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/addNewDestinations">
               <AddNewDestination />
+            </PrivateRoute>
+            <PrivateRoute path="/user/:userName/booked">
+              <Booked />
             </PrivateRoute>
 
             <Route path="/about">

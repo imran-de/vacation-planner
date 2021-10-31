@@ -11,7 +11,7 @@ const Registration = () => {
 
     const location = useLocation();
     //catch private route redirect page url
-    const redirect_uri = location.state?.from || '/';
+    const redirect_uri = location.state?.from || '/destinations';
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {

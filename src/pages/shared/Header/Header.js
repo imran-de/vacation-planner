@@ -34,7 +34,7 @@ const Header = () => {
                                     <Nav.Link as={Link} className="hover:text-gray-200" to="/registration">Register</Nav.Link>
                                 </>
                             }
-                            <Nav.Link as={Link} to={`/user/${user?.displayName}/Booking`}>Booking</Nav.Link>
+                            <Nav.Link as={Link} to={`/user/${user?.displayName}/Booked`}>Booked</Nav.Link>
                             <Nav.Link as={Link} to={`/user/${user?.displayName}`}>{user?.displayName}</Nav.Link>
                             <Nav.Link as={Link} eventKey={2} to={`/user/${user?.displayName}`}>
                                 {/* conditional rendering */}
