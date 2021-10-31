@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import './Contact.css';
 
 const Contact = () => {
     return (
@@ -15,8 +16,10 @@ const Contact = () => {
                 </div>
                 {/* form */}
                 <div className="row mb-5">
-                    <div className="col-md-6 d-flex align-items-center">
-                        <img src="https://www.renaissancecollege.co.za/wp-content/uploads/2018/04/ContactUs2.jpg" alt="" className="img-fluid" />
+                    <div className="col-md-6 d-flex justify-content-center align-items-center">
+                        <div className="w-75">
+                            <img src="https://honda-cbr-imran.netlify.app/images/faq.png" alt="" className="img-fluid contact-img" />
+                        </div>
                     </div>
                     <div className="col-md-6 -flex align-items-center p-4" style={{ backgroundColor: "#fafafa" }}>
                         <Form>

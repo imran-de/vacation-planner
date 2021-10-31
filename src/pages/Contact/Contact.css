@@ -1,0 +1,11 @@
+.contact-img{
+    animation: image-animation 3s ease-in-out .5s infinite alternate;
+}
+/* animation */ 
+@keyframes image-animation {
+    form{
+        transform: scale(1.3);
+    }to{
+        transform: scale(.9);
+    }
+}
