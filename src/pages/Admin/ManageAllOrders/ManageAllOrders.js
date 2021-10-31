@@ -3,13 +3,19 @@ import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ManageAllOrders = () => {
+    const [isLoading, setIsLoading] = useState(false);
     const [orders, setOrders] = useState([]);
     const [statusUpdate, setStatusUpdate] = useState(false);
     //collect all data from mongodb
     useEffect(() => {
+        setIsLoading(true);
         fetch('https://mysterious-island-52828.herokuapp.com/allOrders')
             .then(res => res.json())
-            .then(data => setOrders(data));
+            .then(data => {
+                setOrders(data)
+                setIsLoading(false);
+            });
+
     }, [statusUpdate])
 
     //handle status
@@ -51,6 +57,14 @@ const ManageAllOrders = () => {
 
     }
 
+    if (isLoading) {
+        return <div className="text-center">
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+
     return (
         <div className="container">
             <div className="pt-5 pb-2 d-flex justify-content-between">
@@ -58,7 +72,7 @@ const ManageAllOrders = () => {
                 <h4>Total orders: <span className="text-primary">{orders.length}</span></h4>
             </div>
             {orders.length > 0 ? <>
-                <Table striped bordered hover>
+                <Table striped bordered hover responsive>
                     <thead>
                         <tr>
                             <th>No.</th>
