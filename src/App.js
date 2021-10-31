@@ -17,6 +17,7 @@ import Footer from './pages/shared/Footer/Footer';
 import Destinations from './pages/Home/Destinations/Destinations';
 import Destination from './pages/Destination/Destination';
 import Booked from './pages/Admin/Booked/Booked';
+import AllDestinations from './pages/Admin/AllDestinations/AllDestinations';
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/addNewDestinations">
               <AddNewDestination />
+            </PrivateRoute>
+            <PrivateRoute path="/allDestinations">
+              <AllDestinations />
             </PrivateRoute>
             <PrivateRoute path="/user/:userName/booked">
               <Booked />
