@@ -16,8 +16,8 @@ const Destinations = () => {
     }, [])
 
     if (isLoading) {
-        return <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+        return <Card className="container" style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://thealmanian.com/wp-content/uploads/2019/01/product_image_thumbnail_placeholder.png" />
             <Card.Body>
                 <Placeholder as={Card.Title} animation="glow">
                     <Placeholder xs={6} />
@@ -36,7 +36,7 @@ const Destinations = () => {
             <div className="container py-5">
                 <h2 className="text-center pb-2 text-decoration-underline">Our Destinations</h2>
                 <Row xs={1} md={3} lg={4} className="g-4">
-                    {destinations.map(destination => <Col key={Math.random()}>
+                    {destinations.map((destination, index) => <Col key={Math.random()}>
                         <Card className="border-0 shadow rounded-3" style={{ backgroundColor: "#F3F6F5" }}>
                             <Card.Img className="rounded-bottom" variant="top" height="480" src={destination?.imgURL} style={{ objectFit: 'cover' }} />
                             <Card.Body className="card-img-overlay text-light w-100">
