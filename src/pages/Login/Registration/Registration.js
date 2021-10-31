@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 // from react form hook
@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 
 const Registration = () => {
 
+    const [error, setError] = useState('');
     const history = useHistory();
     const { signInWithGoogle, signInWithFacebook, signInWithGit, makeUserWithEmailAndPassword, msg } = useAuth();
 
@@ -13,15 +14,19 @@ const Registration = () => {
     //catch private route redirect page url
     const redirect_uri = location.state?.from || '/destinations';
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
+        if (data.pass1 !== data.pass2) {
+            setError("password not matched!!!");
+            return;
+        }
         makeUserWithEmailAndPassword(data.email, data.pass1, data.fullName, history, redirect_uri)
     };
     return (
         <div className="font-mono">
             {/* <!-- registration form --> */}
             <div className="">
-                <div className="flex justify-center px-6 my-12">
+                <div className="d-flex justify-content-center my-2">
                     {/* <!-- Row --> */}
                     <div className="row w-100">
                         {/* <!-- Col --> */}
@@ -40,7 +45,7 @@ const Registration = () => {
                                         Full Name
                                     </label>
                                     <input
-                                        className="form-control w-75"
+                                        className="form-control "
                                         id="name"
                                         type="text"
                                         defaultValue="Name" {...register("fullName")}
@@ -51,7 +56,7 @@ const Registration = () => {
                                         Email
                                     </label>
                                     <input
-                                        className="form-control w-75"
+                                        className="form-control "
                                         id="email"
                                         type="email"
                                         placeholder="Email"
@@ -63,7 +68,7 @@ const Registration = () => {
                                         Password
                                     </label>
                                     <input
-                                        className="form-control w-75"
+                                        className={error ? "form-control border border-danger" : "form-control"}
                                         id="password"
                                         type="password"
                                         placeholder="******************"
@@ -75,7 +80,7 @@ const Registration = () => {
                                         Confirm password
                                     </label>
                                     <input
-                                        className="form-control w-75"
+                                        className={error ? "form-control border border-danger" : "form-control"}
                                         id="c_password"
                                         type="password"
                                         placeholder="******************"
@@ -83,7 +88,7 @@ const Registration = () => {
                                     />
                                 </div>
 
-                                <p className="text-xs italic text-red-500">{errors.pass1 === errors.pass2 ? "Password must be same those two field" : ''}</p>
+                                <p className="text-xs italic text-danger">{error ? error : ''}</p>
                                 <div className="mb-6 text-center">
                                     <button
                                         className="btn btn-outline-primary"
