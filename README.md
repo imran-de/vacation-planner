@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Start with vacation planner
 
 This project Live on [Vacation planner](https://vacation-planner-916b4.web.app/).
 
