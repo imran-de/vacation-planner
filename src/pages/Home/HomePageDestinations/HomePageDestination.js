@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col, Placeholder } from 'react-bootstrap';
+import { Card, Col, Placeholder, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Destinations = () => {
+const HomePageDestination = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [destinations, setDestinations] = useState([])
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://mysterious-island-52828.herokuapp.com/allEvents')
+        fetch('https://mysterious-island-52828.herokuapp.com/homePageShowEvent')
             .then(res => res.json())
             .then(data => {
                 setDestinations(data);
@@ -32,7 +32,7 @@ const Destinations = () => {
     }
 
     return (
-        <div>
+        <div style={{ backgroundColor: "#F3F6F5" }}>
             <div className="container py-5">
                 <h2 className="text-center pb-2 text-decoration-underline">Our Destinations</h2>
                 <Row xs={1} md={3} lg={4} className="g-4">
@@ -63,9 +63,15 @@ const Destinations = () => {
                         </Card>
                     </Col>)}
                 </Row>
+
+
+                {/* see all btn */}
+                <div className="text-center mt-5">
+                    <Link className="btn btn-outline-info" to="/destinations" rel="noreferrer"><i className="fab fa-buromobelexperte"></i> See all destinations</Link>
+                </div>
             </div>
         </div>
     );
 };
 
-export default Destinations;
+export default HomePageDestination;
