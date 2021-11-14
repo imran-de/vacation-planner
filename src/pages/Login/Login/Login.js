@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 // from react form hook
 import { useForm } from "react-hook-form";
+import ExampleModal from '../../shared/Modal/ExampleModal';
 
 const Login = () => {
+
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+
     const history = useHistory();
     const { signInWithGoogle, signInWithFacebook, signInWithGit, msg, logInWithEmailAndPassword } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,6 +19,7 @@ const Login = () => {
     // handle email password login
     const onSubmit = data => {
         logInWithEmailAndPassword(data.email, data.pass, history, redirect_uri);
+        handleShow();
     };
 
 
@@ -87,6 +93,8 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+            {/* //Modal */}
+            <ExampleModal show={show} setShow={setShow} />
         </div>
     );
 };
